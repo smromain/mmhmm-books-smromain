@@ -1,5 +1,5 @@
 import React, { FunctionComponent } from 'react';
-import BookCard from '../BookCard/BookCard';
+import BookCard from 'components/BookCard/BookCard';
 import styles from './BookList.module.css'
 
 type BookListProps = {

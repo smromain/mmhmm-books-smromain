@@ -1,10 +1,10 @@
 import type { NextPage } from 'next'
 import { useState } from 'react'
 import Head from 'next/head'
-import BookList from '../components/BookList/BookList'
-import BookForm from '../components/BookForm/BookForm'
-import { BASE_URL } from '../constants/constants'
-import styles from '../styles/Home.module.css'
+import BookList from 'components/BookList/BookList'
+import BookForm from 'components/BookForm/BookForm'
+import { BASE_URL } from 'constants/constants'
+import styles from 'styles/Home.module.css'
 
 interface PageProps {
   initialBookData: Array<Book>
