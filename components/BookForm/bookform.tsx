@@ -1,6 +1,6 @@
 import React, { FunctionComponent, useState } from 'react';
 import Image from 'next/image'
-import styles from '../../styles/Bookform.module.css'
+import styles from '../../styles/BookForm.module.css'
 
 type BookFormProps = {
     setFormOpen: React.Dispatch<React.SetStateAction<boolean>>,

@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from 'react';
 import Image from 'next/image'
-import styles from '../../styles/Bookcard.module.css'
+import styles from '../../styles/BookCard.module.css'
 import { FALLBACK_IMAGE } from '../../constants/constants';
 
 type BookCardProps = {

@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from 'react';
 import BookCard from '../BookCard/bookcard';
-import styles from '../../styles/Booklist.module.css'
+import styles from '../../styles/BookList.module.css'
 
 type BookListProps = {
     books: Array<Book>,
