@@ -2,6 +2,7 @@ import type { NextPage } from 'next'
 import { useState } from 'react'
 import Head from 'next/head'
 import BookList from '../components/BookList/booklist'
+import BookForm from '../components/BookForm/bookform'
 import { BASE_URL } from '../constants/constants'
 import styles from '../styles/Home.module.css'
 
@@ -21,7 +22,11 @@ const Home: NextPage<PageProps> = ({ bookData }) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <>
-        <BookList books={bookData} setFormOpen={setFormOpen} />
+        { formOpen ? (
+          <BookForm setFormOpen={setFormOpen} />
+        ) : ( 
+          <BookList books={bookData} setFormOpen={setFormOpen} />
+        )}
       </>
     </div>
   )

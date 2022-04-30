@@ -1,0 +1,54 @@
+.container {
+    display: flex;
+    padding: 100px 25% 0;
+    flex-direction: column;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    flex: 1;
+}
+  
+.title {
+    font-family: 'SF Pro Display', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 42px;
+    line-height: 50px;
+}
+
+.closeButton {
+    cursor: pointer;
+}
+
+.form {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    padding-top: 80px;
+}
+
+.formInput {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    padding-bottom: 52px;
+}
+
+.form label {
+    font-family: 'SF Pro Display', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 17px;
+    padding-bottom: 9px;
+}
+
+.form input[type='text'] {
+    height: 40px;
+}
+
+.form input[type='textarea'] {
+    height: 107px;
+}

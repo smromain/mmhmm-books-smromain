@@ -19,16 +19,14 @@ const BookList: FunctionComponent<BookListProps> = ({ books, setFormOpen }) => {
                 </div>
             </div>
             <div>
-                { !books.length && (
-                        <div className={styles.emptyShelfWarning}>
-                            <span>
-                                Add a book to your bookshelf by clicking the 'Add Book' button above!
-                            </span>
-                        </div>
-                    )
-                }
-                { !!books.length && (
+                { !!books.length ? (
                     books.map(book => <BookCard { ...book} />)
+                ) : (
+                    <div className={styles.emptyShelfWarning}>
+                        <span>
+                            Add a book to your bookshelf by clicking the 'Add Book' button above!
+                        </span>
+                    </div>
                 ) }
             </div>
         </div>
