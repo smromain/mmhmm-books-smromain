@@ -47,10 +47,13 @@
 
 .form input[type='text'] {
     height: 40px;
+    font-family: sans-serif;
 }
 
-.form input[type='textarea'] {
+.form textarea {
     height: 107px;
+    word-wrap: break-word;
+    font-family: sans-serif;
 }
 
 .submitButton {
@@ -62,6 +65,8 @@
     background: #199C7D;
     border-radius: 6px;
     cursor: pointer;
+    padding: 0;
+    border: none;
 }
 
 .submitButton span {

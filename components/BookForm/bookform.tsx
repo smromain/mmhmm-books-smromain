@@ -75,11 +75,10 @@ const BookForm: FunctionComponent<BookFormProps> = ({ setFormOpen, setBookData }
                 </div>
                 <div className={styles.formInput}>
                     <label htmlFor="Description">Description</label>
-                    <input
-                        type="textarea"
+                    <textarea
                         name="Description"
                         value={description}
-                        onChange={(ev: React.ChangeEvent<HTMLInputElement>):void => setDescription(ev.target.value)}
+                        onChange={(ev: React.ChangeEvent<HTMLTextAreaElement>):void => setDescription(ev.target.value)}
                     />
                 </div>
                 <div className={styles.formInput}>
@@ -93,9 +92,9 @@ const BookForm: FunctionComponent<BookFormProps> = ({ setFormOpen, setBookData }
                 </div>
 
                 <div>
-                    <div className={styles.submitButton} onClick={() => updateBooks()}>
+                    <button className={styles.submitButton} onClick={() => updateBooks()}>
                         <span>Save</span>
-                    </div>  
+                    </button>  
                 </div>
             </div>
         </div>

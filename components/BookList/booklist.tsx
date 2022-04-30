@@ -4,23 +4,47 @@ import styles from '../../styles/Booklist.module.css'
 
 type BookListProps = {
     books: Array<Book>,
-    setFormOpen: React.Dispatch<React.SetStateAction<boolean>>
+    setFormOpen: React.Dispatch<React.SetStateAction<boolean>>,
+    setBookData: React.Dispatch<React.SetStateAction<Array<Book>>>,
 }
 
-const BookList: FunctionComponent<BookListProps> = ({ books, setFormOpen }) => {
+type UpdateResponseJSONType = {
+    books: Array<Book>
+}
+
+const BookList: FunctionComponent<BookListProps> = ({ books, setFormOpen, setBookData }) => {
+
+    const deleteBook = async (id: String) => {
+        const updatedBooks = await fetch('/api/deleteBook', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/JSON'
+            },
+            body: JSON.stringify({
+                id
+            })
+        })
+
+        const responseJSON: UpdateResponseJSONType = await updatedBooks.json()
+
+        if (responseJSON && responseJSON.books) {
+            setBookData(responseJSON.books)
+        }
+    }
+
     return (
         <div className={styles.container}>
             <div className={styles.header}>
                 <span className={styles.title}>
                     Bookshelf
                 </span>
-                <div onClick={() => setFormOpen(true)} className={styles.addBookButton}>
+                <button onClick={() => setFormOpen(true)} className={styles.addBookButton}>
                     <span>Add book</span>
-                </div>
+                </button>
             </div>
             <div>
                 { !!books.length ? (
-                    books.map((book, i) => <BookCard { ...book} key={i} />)
+                    books.map((book, i) => <BookCard { ...book} key={i} deleteBook={deleteBook} />)
                 ) : (
                     <div className={styles.emptyShelfWarning}>
                         <span>

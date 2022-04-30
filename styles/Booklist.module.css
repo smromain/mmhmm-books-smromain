@@ -8,6 +8,7 @@
     display: flex;
     justify-content: space-between;
     flex: 1;
+    padding-bottom: 50px;
 }
   
 .title {
@@ -26,6 +27,8 @@
     background: #199C7D;
     border-radius: 6px;
     cursor: pointer;
+    padding: 0;
+    border: none;
 }
 
 .addBookButton > span {

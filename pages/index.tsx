@@ -32,6 +32,7 @@ const Home: NextPage<PageProps> = ({ initialBookData = [] }) => {
           <BookList
             books={bookData}
             setFormOpen={setFormOpen}
+            setBookData={setBookData}
           />
         )}
       </>
