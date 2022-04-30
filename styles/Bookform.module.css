@@ -52,3 +52,24 @@
 .form input[type='textarea'] {
     height: 107px;
 }
+
+.submitButton {
+    display: flex;
+    flex-direction: row;
+    max-width: 85px;
+    justify-content: center;
+    align-items: center;
+    background: #199C7D;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.submitButton span {
+    font-family: 'SF Pro Display', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 21px;
+    color: #FFFFFF;
+    padding: 14px 22px;
+}

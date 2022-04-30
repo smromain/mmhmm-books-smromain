@@ -1,10 +1,10 @@
 import React, { FunctionComponent } from 'react';
 import Image from 'next/image'
 
-const BookCard: FunctionComponent<Book> = () => {
+const BookCard: FunctionComponent<Book> = ( book ) => {
     return (
         <>
-            hey kid i'm a book
+            { JSON.stringify(book)}
         </>
     )
 }

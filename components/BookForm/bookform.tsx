@@ -3,14 +3,42 @@ import Image from 'next/image'
 import styles from '../../styles/Bookform.module.css'
 
 type BookFormProps = {
-    setFormOpen: React.Dispatch<React.SetStateAction<boolean>>
+    setFormOpen: React.Dispatch<React.SetStateAction<boolean>>,
+    setBookData: React.Dispatch<React.SetStateAction<Array<Book>>>,
 }
 
-const BookForm: FunctionComponent<BookFormProps> = ({ setFormOpen }) => {
+type UpdateResponseJSONType = {
+    books: Array<Book>
+}
+
+const BookForm: FunctionComponent<BookFormProps> = ({ setFormOpen, setBookData }) => {
     const [ title, setTitle ] = useState('')
     const [ author, setAuthor ] = useState('')
     const [ description, setDescription ] = useState('')
     const [ image, setImage ] = useState('')
+
+    const updateBooks = async () => {
+        const updatedBooks = await fetch('/api/addBook', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/JSON'
+            },
+            body: JSON.stringify({
+                title,
+                author,
+                description,
+                image
+            })
+        })
+
+        const responseJSON: UpdateResponseJSONType = await updatedBooks.json()
+
+        if (responseJSON && responseJSON.books) {
+            setBookData(responseJSON.books)
+        }
+
+        setFormOpen(false)
+    }
 
     return (
         <div className={styles.container}>
@@ -62,6 +90,12 @@ const BookForm: FunctionComponent<BookFormProps> = ({ setFormOpen }) => {
                         value={image}
                         onChange={(ev: React.ChangeEvent<HTMLInputElement>):void => setImage(ev.target.value)}
                     />
+                </div>
+
+                <div>
+                    <div className={styles.submitButton} onClick={() => updateBooks()}>
+                        <span>Save</span>
+                    </div>  
                 </div>
             </div>
         </div>

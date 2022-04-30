@@ -7,12 +7,13 @@ import { BASE_URL } from '../constants/constants'
 import styles from '../styles/Home.module.css'
 
 interface PageProps {
-  bookData: Array<Book>
+  initialBookData: Array<Book>
 }
 
-const Home: NextPage<PageProps> = ({ bookData }) => {
+const Home: NextPage<PageProps> = ({ initialBookData = [] }) => {
 
   const [ formOpen, setFormOpen ] = useState(false)
+  const [ bookData, setBookData ] = useState(initialBookData)
 
   return (
     <div className={styles.container}>
@@ -23,9 +24,15 @@ const Home: NextPage<PageProps> = ({ bookData }) => {
       </Head>
       <>
         { formOpen ? (
-          <BookForm setFormOpen={setFormOpen} />
+          <BookForm 
+            setFormOpen={setFormOpen}
+            setBookData={setBookData}
+          />
         ) : ( 
-          <BookList books={bookData} setFormOpen={setFormOpen} />
+          <BookList
+            books={bookData}
+            setFormOpen={setFormOpen}
+          />
         )}
       </>
     </div>
@@ -44,9 +51,9 @@ export async function getServerSideProps() {
     }
   )
 
-  const bookData: Array<Book> = await res.json()
+  const initialBookData: Array<Book> = await res.json()
 
-  return { props: { bookData }}
+  return { props: { initialBookData }}
 
 }
 
