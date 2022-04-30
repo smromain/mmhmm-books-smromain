@@ -1,8 +1,8 @@
 import type { NextPage } from 'next'
 import { useState } from 'react'
 import Head from 'next/head'
-import BookList from '../components/BookList/booklist'
-import BookForm from '../components/BookForm/bookform'
+import BookList from '../components/BookList/BookList'
+import BookForm from '../components/BookForm/BookForm'
 import { BASE_URL } from '../constants/constants'
 import styles from '../styles/Home.module.css'
 
