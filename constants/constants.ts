@@ -1,0 +1,1 @@
+export const BASE_URL = 'https://us-central1-all-turtles-interview.cloudfunctions.net'
