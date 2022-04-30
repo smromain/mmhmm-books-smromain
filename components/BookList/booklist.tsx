@@ -1,5 +1,4 @@
 import React, { FunctionComponent } from 'react';
-import Image from 'next/image'
 import BookCard from '../BookCard/bookcard';
 import styles from '../../styles/Booklist.module.css'
 
