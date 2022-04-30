@@ -8,14 +8,14 @@ type BookListProps = {
     setFormOpen: React.Dispatch<React.SetStateAction<boolean>>
 }
 
-const BookList: FunctionComponent<BookListProps> = (books, setFormOpen) => {
+const BookList: FunctionComponent<BookListProps> = ({ books, setFormOpen }) => {
     return (
         <div className={styles.container}>
             <div className={styles.header}>
                 <span className={styles.title}>
                     Bookshelf
                 </span>
-                <div className={styles.addBookButton}>
+                <div onClick={() => setFormOpen(true)} className={styles.addBookButton}>
                     <span>Add book</span>
                 </div>
             </div>
