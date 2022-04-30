@@ -1,6 +1,7 @@
 .container {
     display: flex;
     padding: 100px 25% 0;
+    flex-direction: column;
 }
 
 .header {
@@ -35,4 +36,18 @@
     line-height: 21px;
     color: #FFFFFF;
     padding: 14px 22px;
+}
+
+
+.emptyShelfWarning {
+    flex: 1;
+    justify-content: space-between;
+    padding-top: 2em;
+}
+
+.emptyShelfWarning > span {
+    font-family: 'SF Pro Display', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
 }
