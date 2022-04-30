@@ -1,0 +1,38 @@
+.container {
+    display: flex;
+    padding: 100px 25% 0;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    flex: 1;
+}
+  
+.title {
+    font-family: 'SF Pro Display', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 42px;
+    line-height: 50px;
+}
+
+.addBookButton {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background: #199C7D;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.addBookButton > span {
+    font-family: 'SF Pro Display', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 21px;
+    color: #FFFFFF;
+    padding: 14px 22px;
+}

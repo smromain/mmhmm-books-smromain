@@ -1,5 +1,7 @@
 import type { NextPage } from 'next'
+import { useState } from 'react'
 import Head from 'next/head'
+import BookList from '../components/BookList/booklist'
 import { BASE_URL } from '../constants/constants'
 import styles from '../styles/Home.module.css'
 
@@ -8,6 +10,9 @@ interface PageProps {
 }
 
 const Home: NextPage<PageProps> = ({ bookData }) => {
+
+  const [ formOpen, setFormOpen ] = useState(false)
+
   return (
     <div className={styles.container}>
       <Head>
@@ -16,7 +21,7 @@ const Home: NextPage<PageProps> = ({ bookData }) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <>
-        { JSON.stringify(bookData) }
+        <BookList books={bookData} setFormOpen={setFormOpen} />
       </>
     </div>
   )
