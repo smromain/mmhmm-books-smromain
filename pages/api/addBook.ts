@@ -17,9 +17,10 @@ export default async function handler(
     {
       method: 'POST',
       headers: new Headers({
-        'Authorization': 'steveromain'
+        'Authorization': 'steveromain',
+        'Content-Type': 'application/json'
       }),
-      body: new URLSearchParams({
+      body: JSON.stringify({
         title,
         author,
         description,
