@@ -26,6 +26,7 @@ const BookCard: FunctionComponent<BookCardProps> = ({ id, imageUrl, title, autho
                 <Image
                     width={28} 
                     height={28}
+                    alt="Delete Book"
                     src='/trash.svg'
                     className={styles.trashButton}
                     onClick={() => deleteBook(id)} 

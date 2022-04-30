@@ -49,6 +49,7 @@ const BookForm: FunctionComponent<BookFormProps> = ({ setFormOpen, setBookData }
                 <Image
                     width={28} 
                     height={28}
+                    alt="Close Form"
                     src='/x.svg'
                     onClick={() => setFormOpen(false)} 
                     className={styles.closeButton}

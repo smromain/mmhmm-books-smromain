@@ -48,7 +48,7 @@ const BookList: FunctionComponent<BookListProps> = ({ books, setFormOpen, setBoo
                 ) : (
                     <div className={styles.emptyShelfWarning}>
                         <span>
-                            Add a book to your bookshelf by clicking the 'Add Book' button above!
+                            Add a book to your bookshelf by clicking the &apos;Add Book&apos; button above!
                         </span>
                     </div>
                 ) }
