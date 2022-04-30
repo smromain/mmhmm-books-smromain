@@ -20,7 +20,7 @@ const BookList: FunctionComponent<BookListProps> = ({ books, setFormOpen }) => {
             </div>
             <div>
                 { !!books.length ? (
-                    books.map(book => <BookCard { ...book} />)
+                    books.map((book, i) => <BookCard { ...book} key={i} />)
                 ) : (
                     <div className={styles.emptyShelfWarning}>
                         <span>
